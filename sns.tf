@@ -16,12 +16,6 @@ resource "aws_sns_topic_subscription" "alex_phone" {
   endpoint  = var.phone_1
 }
 
-resource "aws_sns_topic_subscription" "zx_phone_netflix" {
-  topic_arn = aws_sns_topic.netflix_topic.id
-  protocol  = "sms"
-  endpoint  = var.phone_2
-}
-
 resource "aws_sns_topic_subscription" "zk_phone_netflix" {
   topic_arn = aws_sns_topic.netflix_topic.id
   protocol  = "sms"
@@ -55,8 +49,12 @@ resource "aws_sns_topic_subscription" "qh_phone" {
 }
 
 resource "aws_sns_topic_subscription" "zk_phone_cast" {
-  topic_arn = aws_sns_topic.netflix_topic.id
+  topic_arn = aws_sns_topic.cast_topic.id
   protocol  = "sms"
   endpoint  = var.phone_5
 }
  
+# setting this as transactional because promotional and transactional sms costs the same in AP-Southeast-1
+resource "aws_sns_sms_preferences" "update_sms_prefs" {
+  default_sms_type = "Transactional"
+}
