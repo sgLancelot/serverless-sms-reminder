@@ -4,6 +4,7 @@ Details found at zhenkai.xyz blog. Part 1: https://zhenkai.xyz/serverless-sms-re
 ## Getting Started
 - Install Terraform CLI
 - Pull this repositary or copy the files out into your folder
+- Create a (terraform.tfvars) file and input your unique variables. Do not expose this.
 - In your folder with the .tf files, run "terraform init". This will initiate terraform
 - Run "terraform apply"
 
