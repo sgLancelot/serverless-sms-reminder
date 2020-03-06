@@ -47,12 +47,6 @@ resource "aws_sns_topic_subscription" "qh_phone" {
   protocol  = "sms"
   endpoint  = var.phone_4
 }
-
-resource "aws_sns_topic_subscription" "zk_phone_cast" {
-  topic_arn = aws_sns_topic.cast_topic.id
-  protocol  = "sms"
-  endpoint  = var.phone_5
-}
  
 # setting this as transactional because promotional and transactional sms costs the same in AP-Southeast-1
 resource "aws_sns_sms_preferences" "update_sms_prefs" {

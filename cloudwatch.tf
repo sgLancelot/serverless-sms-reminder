@@ -2,7 +2,7 @@
 #### Netflix ####
 #################
 resource "aws_cloudwatch_event_rule" "monthly_netflix" {
-  schedule_expression = "cron(16 11 1 * ? *)"
+  schedule_expression = "cron(0 11 1 * ? *)"
   name                = "Cron-Lambda-SNS-Netflix"
 }
 
@@ -16,7 +16,7 @@ resource "aws_cloudwatch_event_target" "sns_netflix" {
 ##############
 
 resource "aws_cloudwatch_event_rule" "monthly_cast" {
-  schedule_expression = "cron(0 11 1 * ? *)"
+  schedule_expression = "cron(0 11 2 * ? *)"
   name                = "Cron-Lambda-SNS-Cast"
 }
 
