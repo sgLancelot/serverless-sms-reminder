@@ -47,7 +47,7 @@ resource "aws_sns_topic_subscription" "qh_phone" {
   protocol  = "sms"
   endpoint  = var.phone_4
 }
- 
+
 # setting this as transactional because promotional and transactional sms costs the same in AP-Southeast-1
 resource "aws_sns_sms_preferences" "update_sms_prefs" {
   default_sms_type = "Transactional"
